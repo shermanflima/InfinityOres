@@ -1,0 +1,59 @@
+package com.sherman.item;
+
+import com.sherman.util.ModTags;
+import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.Component;
+import net.minecraft.world.Containers;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.context.UseOnContext;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.state.BlockState;
+import org.jetbrains.annotations.NotNull;
+
+import java.util.List;
+
+import static com.sherman.InfinityOres.MOD_ID;
+
+public class InfinityTool extends Item {
+
+    public InfinityTool() {
+        super(new Item.Properties().stacksTo(1));
+    }
+
+    private boolean isValidBlock(BlockState block){
+        return block.is(ModTags.Blocks.INFINITY_BLOCK);
+    }
+
+    @Override
+    public @NotNull InteractionResult useOn(UseOnContext context) {
+        if(Screen.hasShiftDown()) {
+            Level level = context.getLevel();
+            if (!level.isClientSide()) {
+                Player player = context.getPlayer();
+                BlockPos position = context.getClickedPos();
+                BlockState blockState = level.getBlockState(position);
+                if (player != null && isValidBlock(blockState)) {
+                    Inventory inventory = player.getInventory();
+                    level.removeBlock(position, false);
+                    ItemStack itemStack = new ItemStack(blockState.getBlock().asItem());
+                    if (!inventory.add(itemStack)) {
+                        Containers.dropItemStack(level, position.getX(), position.getY(), position.getZ(), itemStack);
+                    }
+                }
+            }
+        }
+        return InteractionResult.SUCCESS;
+    }
+
+    @Override
+    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+        tooltipComponents.add(Component.translatable("tooltip." + MOD_ID + ".tool"));
+        super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+    }
+}

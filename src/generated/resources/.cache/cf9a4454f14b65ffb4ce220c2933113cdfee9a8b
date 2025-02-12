@@ -1,0 +1,6 @@
+// 1.21.1	2025-02-12T15:13:35.7623053	Tags for minecraft:block mod id infinityores
+bc0947175a9e0ce0194587e907a9cc28651e3f8e data/infinityores/tags/block/infinity_block.json
+2ade5e6ca9ba4d3f066fc01e06d0cfcf29a65a25 data/minecraft/tags/block/mineable/pickaxe.json
+a982dca626971f246944c4e2451318eb619e96ea data/minecraft/tags/block/needs_diamond_tool.json
+97d17a8f9277218d5a744a1731a6a9da001ed7da data/minecraft/tags/block/needs_iron_tool.json
+3cae7a523a4e0b986beda5b4986b158ec4a3a41a data/minecraft/tags/block/needs_stone_tool.json

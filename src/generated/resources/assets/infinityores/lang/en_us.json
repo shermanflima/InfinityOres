@@ -1,0 +1,17 @@
+{
+  "block.infinityores.ancient_debris": "Infinty Ancient Debris",
+  "block.infinityores.budding_amethyst": "Infinty Budding Amethyst",
+  "block.infinityores.coal_ore": "Infinty Coal Ore",
+  "block.infinityores.copper_ore": "Infinty Copper Ore",
+  "block.infinityores.diamond_ore": "Infinty Diamond Ore",
+  "block.infinityores.emerald_ore": "Infinty Emerald Ore",
+  "block.infinityores.glowstone": "Infinty Glowstone",
+  "block.infinityores.gold_ore": "Infinty Gold Ore",
+  "block.infinityores.iron_ore": "Infinty Iron Ore",
+  "block.infinityores.lapis_ore": "Infinty Lapis Ore",
+  "block.infinityores.nether_quartz_ore": "Infinty Nether Quartz Ore",
+  "block.infinityores.redstone_ore": "Infinty Redstone Ore",
+  "item.infinityores.tool": "Infinity Tool",
+  "itemGroup.infinityores": "Infinity Ores",
+  "tooltip.infinityores.tool": "Shift Right-click to remove a block"
+}
