@@ -2,8 +2,10 @@ package com.sherman.datagen.server;
 
 import com.sherman.registry.ModRegistry;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Blocks;
 import org.jetbrains.annotations.NotNull;
 
@@ -30,6 +32,14 @@ public class ModRecipeProvider extends RecipeProvider {
         threeByThreePacker(RecipeCategory.MISC, ModRegistry.LAPIS_ORE.get(), Blocks.LAPIS_BLOCK);
         threeByThreePacker(RecipeCategory.MISC, ModRegistry.NETHER_QUARTZ_ORE.get(), Blocks.QUARTZ_BLOCK);
         threeByThreePacker(RecipeCategory.MISC, ModRegistry.REDSTONE_ORE.get(), Blocks.REDSTONE_BLOCK);
+        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM),RecipeCategory.MISC, ModRegistry.TOOL.get())
+                .pattern("D D")
+                .pattern(" O ")
+                .pattern(" O ")
+                .define('D', Items.DIAMOND)
+                .define('O', Blocks.OBSIDIAN)
+                .unlockedBy("has_obsidian", has(Blocks.OBSIDIAN))
+                .save(this.output);
     }
 
     // The runner class, this should be added to the DataGenerator as a DataProvider
