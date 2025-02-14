@@ -13,5 +13,5 @@
   "block.infinityores.redstone_ore": "Infinty Redstone Ore",
   "item.infinityores.tool": "Infinity Tool",
   "itemGroup.infinityores": "Infinity Ores",
-  "tooltip.infinityores.tool": "Shift Right-click to remove a block"
+  "tooltip.infinityores.tool": "Right-click to remove a block"
 }
