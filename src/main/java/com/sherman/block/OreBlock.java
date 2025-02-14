@@ -10,6 +10,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.DropExperienceBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import org.jetbrains.annotations.NotNull;
 
 public class OreBlock extends DropExperienceBlock {
 
@@ -58,7 +59,7 @@ public class OreBlock extends DropExperienceBlock {
     }
 
     @Override
-    public void playerDestroy(Level level, Player player, BlockPos pos, BlockState state, BlockEntity blockEntity, ItemStack tool) {
+    public void playerDestroy(@NotNull Level level, Player player, BlockPos pos, BlockState state, BlockEntity blockEntity, ItemStack tool) {
         super.playerDestroy(level, player, pos, state, blockEntity, tool);
         level.setBlockAndUpdate(pos, this.defaultBlockState());
     }
