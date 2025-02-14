@@ -13,6 +13,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
 
@@ -22,8 +23,8 @@ import static com.sherman.InfinityOres.MOD_ID;
 
 public class InfinityTool extends Item {
 
-    public InfinityTool() {
-        super(new Item.Properties().stacksTo(1));
+    public InfinityTool(Properties properties) {
+        super(properties.stacksTo(1));
     }
 
     private boolean isValidBlock(BlockState block){
