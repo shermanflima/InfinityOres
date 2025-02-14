@@ -32,22 +32,21 @@ public class InfinityTool extends Item {
 
     @Override
     public @NotNull InteractionResult useOn(UseOnContext context) {
-        if(Screen.hasShiftDown()) {
-            Level level = context.getLevel();
-            if (!level.isClientSide()) {
-                Player player = context.getPlayer();
-                BlockPos position = context.getClickedPos();
-                BlockState blockState = level.getBlockState(position);
-                if (player != null && isValidBlock(blockState)) {
-                    Inventory inventory = player.getInventory();
-                    level.removeBlock(position, false);
-                    ItemStack itemStack = new ItemStack(blockState.getBlock().asItem());
-                    if (!inventory.add(itemStack)) {
-                        Containers.dropItemStack(level, position.getX(), position.getY(), position.getZ(), itemStack);
-                    }
+        Level level = context.getLevel();
+        if (!level.isClientSide()) {
+            Player player = context.getPlayer();
+            BlockPos position = context.getClickedPos();
+            BlockState blockState = level.getBlockState(position);
+            if (player != null && isValidBlock(blockState)) {
+                Inventory inventory = player.getInventory();
+                level.removeBlock(position, false);
+                ItemStack itemStack = new ItemStack(blockState.getBlock().asItem());
+                if (!inventory.add(itemStack)) {
+                    Containers.dropItemStack(level, position.getX(), position.getY(), position.getZ(), itemStack);
                 }
             }
         }
+
         return InteractionResult.SUCCESS;
     }
 
