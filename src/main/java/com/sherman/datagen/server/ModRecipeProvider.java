@@ -4,6 +4,7 @@ import com.sherman.registry.ModRegistry;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Blocks;
 import org.jetbrains.annotations.NotNull;
 
@@ -29,5 +30,13 @@ public class ModRecipeProvider extends RecipeProvider {
         threeByThreePacker(recipeOutput, RecipeCategory.MISC, ModRegistry.LAPIS_ORE.get(), Blocks.LAPIS_BLOCK);
         threeByThreePacker(recipeOutput, RecipeCategory.MISC, ModRegistry.NETHER_QUARTZ_ORE.get(), Blocks.QUARTZ_BLOCK);
         threeByThreePacker(recipeOutput, RecipeCategory.MISC, ModRegistry.REDSTONE_ORE.get(), Blocks.REDSTONE_BLOCK);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModRegistry.TOOL.get())
+                .pattern("D D")
+                .pattern(" O ")
+                .pattern(" O ")
+                .define('D', Items.DIAMOND)
+                .define('O', Blocks.OBSIDIAN)
+                .unlockedBy("has_obsidian", has(Blocks.OBSIDIAN))
+                .save(recipeOutput);
     }
 }
