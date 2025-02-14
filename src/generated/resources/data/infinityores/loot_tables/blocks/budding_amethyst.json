@@ -15,7 +15,7 @@
                   "predicates": {
                     "minecraft:enchantments": [
                       {
-                        "enchantments": "minecraft:silk_touch",
+                        "enchantment": "minecraft:silk_touch",
                         "levels": {
                           "min": 1
                         }
@@ -26,14 +26,17 @@
               }
             }
           ],
-          "name": "minecraft:glowstone_dust"
+          "name": "minecraft:amethyst_shard"
         }
       ],
       "functions": [
         {
           "enchantment": "minecraft:fortune",
-          "formula": "minecraft:ore_drops",
-          "function": "minecraft:apply_bonus"
+          "formula": "minecraft:uniform_bonus_count",
+          "function": "minecraft:apply_bonus",
+          "parameters": {
+            "bonusMultiplier": 1
+          }
         }
       ],
       "rolls": 1.0
@@ -50,7 +53,7 @@
                 "predicates": {
                   "minecraft:enchantments": [
                     {
-                      "enchantments": "minecraft:silk_touch",
+                      "enchantment": "minecraft:silk_touch",
                       "levels": {
                         "min": 1
                       }
@@ -60,11 +63,11 @@
               }
             }
           ],
-          "name": "minecraft:glowstone"
+          "name": "minecraft:amethyst_cluster"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "infinityores:blocks/glowstone"
+  "random_sequence": "infinityores:blocks/budding_amethyst"
 }

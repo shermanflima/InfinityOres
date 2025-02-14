@@ -12,8 +12,11 @@
       "functions": [
         {
           "enchantment": "minecraft:fortune",
-          "formula": "minecraft:ore_drops",
-          "function": "minecraft:apply_bonus"
+          "formula": "minecraft:uniform_bonus_count",
+          "function": "minecraft:apply_bonus",
+          "parameters": {
+            "bonusMultiplier": 1
+          }
         }
       ],
       "rolls": 1.0

@@ -15,7 +15,7 @@
                   "predicates": {
                     "minecraft:enchantments": [
                       {
-                        "enchantments": "minecraft:silk_touch",
+                        "enchantment": "minecraft:silk_touch",
                         "levels": {
                           "min": 1
                         }
@@ -26,14 +26,17 @@
               }
             }
           ],
-          "name": "minecraft:raw_gold"
+          "name": "minecraft:quartz"
         }
       ],
       "functions": [
         {
           "enchantment": "minecraft:fortune",
-          "formula": "minecraft:ore_drops",
-          "function": "minecraft:apply_bonus"
+          "formula": "minecraft:uniform_bonus_count",
+          "function": "minecraft:apply_bonus",
+          "parameters": {
+            "bonusMultiplier": 1
+          }
         }
       ],
       "rolls": 1.0
@@ -50,7 +53,7 @@
                 "predicates": {
                   "minecraft:enchantments": [
                     {
-                      "enchantments": "minecraft:silk_touch",
+                      "enchantment": "minecraft:silk_touch",
                       "levels": {
                         "min": 1
                       }
@@ -60,11 +63,11 @@
               }
             }
           ],
-          "name": "minecraft:gold_ore"
+          "name": "minecraft:nether_quartz_ore"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "infinityores:blocks/gold_ore"
+  "random_sequence": "infinityores:blocks/nether_quartz_ore"
 }

@@ -12,7 +12,7 @@ public class ModTags {
         public static final TagKey<Block> INFINITY_BLOCK = createTag("infinity_block");
 
         private static TagKey<Block> createTag(String name) {
-            return BlockTags.create(ResourceLocation.fromNamespaceAndPath(MOD_ID, name));
+            return BlockTags.create(new ResourceLocation(MOD_ID, name));
         }
     }
 }

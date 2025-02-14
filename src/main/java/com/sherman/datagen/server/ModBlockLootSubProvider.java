@@ -1,12 +1,9 @@
 package com.sherman.datagen.server;
 
 import com.sherman.registry.ModRegistry;
-import net.minecraft.core.HolderLookup;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
@@ -22,12 +19,8 @@ import java.util.Set;
 
 public class ModBlockLootSubProvider extends BlockLootSubProvider {
 
-
-    private final HolderLookup.RegistryLookup<Enchantment> registrylookup;
-
-    public ModBlockLootSubProvider(HolderLookup.Provider lookupProvider) {
-        super(Set.of(), FeatureFlags.DEFAULT_FLAGS, lookupProvider);
-        registrylookup = registries.lookupOrThrow(Registries.ENCHANTMENT);
+    public ModBlockLootSubProvider() {
+        super(Set.of(), FeatureFlags.DEFAULT_FLAGS);
     }
 
     @Override
@@ -60,7 +53,7 @@ public class ModBlockLootSubProvider extends BlockLootSubProvider {
                         LootPool.lootPool()
                                 .setRolls(ConstantValue.exactly(1.0F))
                                 .add(LootItem.lootTableItem(drop))
-                                .apply(ApplyBonusCount.addOreBonusCount(registrylookup.getOrThrow(Enchantments.FORTUNE))));
+                                .apply(ApplyBonusCount.addUniformBonusCount(Enchantments.FORTUNE)));
     }
 
     protected LootTable.Builder createModOreDrop(ItemLike withSilkTouch, ItemLike drop){
@@ -68,11 +61,11 @@ public class ModBlockLootSubProvider extends BlockLootSubProvider {
                 .withPool(
                         LootPool.lootPool()
                                 .setRolls(ConstantValue.exactly(1.0F))
-                                .add(LootItem.lootTableItem(drop).when(hasSilkTouch().invert()))
-                                .apply(ApplyBonusCount.addOreBonusCount(registrylookup.getOrThrow(Enchantments.FORTUNE))))
+                                .add(LootItem.lootTableItem(drop).when(HAS_SILK_TOUCH.invert()))
+                                .apply(ApplyBonusCount.addUniformBonusCount(Enchantments.FORTUNE)))
                 .withPool(
                         LootPool.lootPool()
                                 .setRolls(ConstantValue.exactly(1.0F))
-                                .add(LootItem.lootTableItem(withSilkTouch).when(hasSilkTouch())));
+                                .add(LootItem.lootTableItem(withSilkTouch).when(HAS_SILK_TOUCH)));
     }
 }

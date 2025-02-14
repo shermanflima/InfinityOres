@@ -62,9 +62,7 @@ public class ModRegistry {
                     for(DeferredHolder<Block, ? extends Block> holder : ModRegistry.BLOCKS.getEntries()){
                         output.accept(holder.get());
                     }
-                    for(DeferredHolder<Item, ? extends Item> holder : ModRegistry.ITEMS.getEntries()){
-                        output.accept(holder.get());
-                    }
+                    output.accept(ModRegistry.TOOL);
                 }).build());
         CREATIVE_MODE_TABS.register(eventBus);
     }

@@ -16,7 +16,7 @@
                     "predicates": {
                       "minecraft:enchantments": [
                         {
-                          "enchantments": "minecraft:silk_touch",
+                          "enchantment": "minecraft:silk_touch",
                           "levels": {
                             "min": 1
                           }
@@ -26,7 +26,7 @@
                   }
                 }
               ],
-              "name": "minecraft:copper_ore"
+              "name": "minecraft:redstone_ore"
             },
             {
               "type": "minecraft:item",
@@ -36,20 +36,23 @@
                   "count": {
                     "type": "minecraft:uniform",
                     "max": 5.0,
-                    "min": 2.0
+                    "min": 4.0
                   },
                   "function": "minecraft:set_count"
                 },
                 {
                   "enchantment": "minecraft:fortune",
-                  "formula": "minecraft:ore_drops",
-                  "function": "minecraft:apply_bonus"
+                  "formula": "minecraft:uniform_bonus_count",
+                  "function": "minecraft:apply_bonus",
+                  "parameters": {
+                    "bonusMultiplier": 1
+                  }
                 },
                 {
                   "function": "minecraft:explosion_decay"
                 }
               ],
-              "name": "minecraft:raw_copper"
+              "name": "minecraft:redstone"
             }
           ]
         }
@@ -57,5 +60,5 @@
       "rolls": 1.0
     }
   ],
-  "random_sequence": "infinityores:blocks/copper_ore"
+  "random_sequence": "infinityores:blocks/redstone_ore"
 }
