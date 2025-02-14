@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": "minecraft:diamond",
+    "O": "minecraft:obsidian"
+  },
+  "pattern": [
+    "D D",
+    " O ",
+    " O "
+  ],
+  "result": {
+    "count": 1,
+    "id": "infinityores:tool"
+  }
+}
