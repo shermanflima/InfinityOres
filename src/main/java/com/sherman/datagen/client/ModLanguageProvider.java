@@ -30,6 +30,6 @@ public class ModLanguageProvider extends LanguageProvider {
         addBlock(ModRegistry.REDSTONE_ORE, "Infinty Redstone Ore");
 
         addItem(ModRegistry.TOOL, "Infinity Tool");
-        add("tooltip." + MOD_ID + ".tool", "Shift Right-click to remove a block");
+        add("tooltip." + MOD_ID + ".tool", "Right-click to remove a block");
     }
 }
