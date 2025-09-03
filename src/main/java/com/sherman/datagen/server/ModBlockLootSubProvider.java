@@ -35,7 +35,7 @@ public class ModBlockLootSubProvider extends BlockLootSubProvider {
     protected void generate() {
         add(ModRegistry.ANCIENT_DEBRIS.get(), createModOreDrop(Blocks.ANCIENT_DEBRIS));
         add(ModRegistry.BUDDING_AMETHYST.get(), createModOreDrop(Items.AMETHYST_CLUSTER, Items.AMETHYST_SHARD));
-        add(ModRegistry.COAL_ORE.get(), createModOreDrop(Blocks.COPPER_ORE, Items.COAL));
+        add(ModRegistry.COAL_ORE.get(), createModOreDrop(Blocks.COAL_ORE, Items.COAL));
         add(ModRegistry.COPPER_ORE.get(), createCopperOreDrops(Blocks.COPPER_ORE));
         add(ModRegistry.DIAMOND_ORE.get(), createModOreDrop(Blocks.DIAMOND_ORE, Items.DIAMOND));
         add(ModRegistry.EMERALD_ORE.get(), createModOreDrop(Blocks.EMERALD_ORE, Items.EMERALD));
