@@ -48,10 +48,12 @@ public class InfinityTool extends Item {
 
         return InteractionResult.SUCCESS;
     }
-
+    /*
     @Override
     public void appendHoverText(@NotNull ItemStack stack, @NotNull TooltipContext context, List<Component> tooltipComponents, @NotNull TooltipFlag tooltipFlag) {
         tooltipComponents.add(Component.translatable("tooltip." + MOD_ID + ".tool"));
         super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
     }
+
+     */
 }
